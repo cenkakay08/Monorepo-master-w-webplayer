@@ -1,0 +1,56 @@
+{
+  "name": "myprojectname",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "android": "yarn workspace mobile android",
+    "compile": "tsc -b --incremental",
+    "ios": "yarn workspace mobile  ios",
+    "studio": "yarn workspace mobile studio",
+    "xcode": "yarn workspace mobile xcode",
+    "prettier": "prettier \"**/*.{js,jsx,css,json}\"",
+    "format": "npm run prettier -- --write",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "validate": "npm run prettier -- --list-different && npm run lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "presets": [
+      "react-native"
+    ],
+    "setupTestFrameworkScriptFile": "jest-enzyme",
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,css}": [
+      "npm run format",
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
+    "react-dom": "^16.13.1",
+    "react-native-web-player": "^2.0.0-alpha.20",
+    "typescript": "3.7.5"
+  }
+}
