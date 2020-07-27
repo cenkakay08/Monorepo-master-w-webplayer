@@ -10,13 +10,14 @@ import {
 
 import { AppHeader } from './AppHeader'
 import WebPlayer from 'react-native-web-player'
+import {WebView} from 'react-native-webview'
 
 export function App() {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScrollView
+        <ScrollView        
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <AppHeader />
@@ -54,7 +55,17 @@ export function App() {
     </>
   );
 };
-
+//contentInsetAdjustmentBehavior="automatic"
+/* <WebView
+   source={{html: '<iframe width="100%" height="50%" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'}}
+   style={{marginTop: 20}}
+/> */
+/* <iframe
+           width="880"
+           height="425" 
+           src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          /> */
+ //<WebPlayer style={{ width: 800, height: 500 }} baseURL= "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"></WebPlayer>
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'white',
