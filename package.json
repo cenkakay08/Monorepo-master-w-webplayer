@@ -51,6 +51,7 @@
     "jest-enzyme": "^7.1.2",
     "react-dom": "^16.13.1",
     "react-native-web-player": "^2.0.0-alpha.20",
+    "react-native-webview": "^10.3.2",
     "typescript": "3.7.5"
   }
 }
