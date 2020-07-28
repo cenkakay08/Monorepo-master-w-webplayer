@@ -45,7 +45,8 @@ exports[`Renders the shared app 1`] = `
                 dir="auto"
                 style="color: rgb(128, 128, 128); font-size: 18px; font-weight: 400; margin-top: 8px;"
               >
-                Edit 
+                Edit
+                 
                 <span
                   class="css-text-901oao css-textHasAncestor-16my406"
                   dir="auto"
@@ -53,7 +54,8 @@ exports[`Renders the shared app 1`] = `
                 >
                   packages/components/App.tsx
                 </span>
-                 to change this screen and then come back to see your edits (in the phone or the browser).
+                 
+                to change this screen and then come back to see your edits (in the phone or the browser).
               </div>
             </div>
             <div
@@ -72,7 +74,8 @@ exports[`Renders the shared app 1`] = `
                 dir="auto"
                 style="color: rgb(128, 128, 128); font-size: 18px; font-weight: 400; margin-top: 8px;"
               >
-                Run 
+                Run
+                 
                 <span
                   class="css-text-901oao css-textHasAncestor-16my406"
                   dir="auto"
@@ -80,14 +83,16 @@ exports[`Renders the shared app 1`] = `
                 >
                   yarn workspace web start
                 </span>
-                 to open this app in the browser.
+                 
+                to open this app in the browser.
               </div>
               <div
                 class="css-text-901oao"
                 dir="auto"
                 style="color: rgb(128, 128, 128); font-size: 18px; font-weight: 400; margin-top: 8px;"
               >
-                It will share the same code from mobile, unless you create platform-specific files using the 
+                It will share the same code from mobile, unless you create platform-specific files using the
+                 
                 <span
                   class="css-text-901oao css-textHasAncestor-16my406"
                   dir="auto"
