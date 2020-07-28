@@ -8,7 +8,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 // our packages that will now be included in the CRA build step
 const appIncludes = [
   resolveApp('src'),
-  resolveApp('../components/src'),
+  resolveApp('../components/src')
 ]
 
 module.exports = function override(config, env) {
@@ -20,7 +20,7 @@ module.exports = function override(config, env) {
   config.module.rules[1] = null
   config.module.rules[2].oneOf[1].include = appIncludes
   config.module.rules[2].oneOf[1].options.plugins = [
-    require.resolve('babel-plugin-react-native-web'),
+    require.resolve('babel-plugin-react-native-web')
   ].concat(config.module.rules[2].oneOf[1].options.plugins)
   config.module.rules = config.module.rules.filter(Boolean)
   config.plugins.push(

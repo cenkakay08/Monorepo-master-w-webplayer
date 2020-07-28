@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders the shared app 1`] = `
+<body>
+  <div>
+    <div
+      class="css-view-1dbjc4n"
+    >
+      <div
+        class="css-view-1dbjc4n"
+        style="background-color: rgb(255, 255, 255); flex-direction: column; flex-grow: 1; flex-shrink: 1; overflow-x: hidden; overflow-y: auto; transform: translateZ(0px);"
+      >
+        <div
+          class="css-view-1dbjc4n"
+        >
+          <div
+            class="css-view-1dbjc4n"
+            style="align-items: center; background-color: rgb(243, 243, 243); height: 200px; justify-content: center; width: 100%;"
+          >
+            <div
+              class="css-text-901oao"
+              dir="auto"
+              style="font-size: 36px; font-weight: 600;"
+            >
+              Welcome to React Native Web + Monorepo
+            </div>
+          </div>
+          <div
+            class="css-view-1dbjc4n"
+            style="background-color: rgb(255, 255, 255);"
+          >
+            <div
+              class="css-view-1dbjc4n"
+              style="margin-top: 32px; padding-right: 24px; padding-left: 24px;"
+            >
+              <div
+                class="css-text-901oao"
+                dir="auto"
+                style="color: rgb(0, 0, 0); font-size: 24px; font-weight: 600;"
+              >
+                Code sharing using Monorepo
+              </div>
+              <div
+                class="css-text-901oao"
+                dir="auto"
+                style="color: rgb(128, 128, 128); font-size: 18px; font-weight: 400; margin-top: 8px;"
+              >
+                Edit 
+                <span
+                  class="css-text-901oao css-textHasAncestor-16my406"
+                  dir="auto"
+                  style="font-weight: 700;"
+                >
+                  packages/components/App.tsx
+                </span>
+                 to change this screen and then come back to see your edits (in the phone or the browser).
+              </div>
+            </div>
+            <div
+              class="css-view-1dbjc4n"
+              style="margin-top: 32px; padding-right: 24px; padding-left: 24px;"
+            >
+              <div
+                class="css-text-901oao"
+                dir="auto"
+                style="color: rgb(0, 0, 0); font-size: 24px; font-weight: 600;"
+              >
+                Web support via react-native-web
+              </div>
+              <div
+                class="css-text-901oao"
+                dir="auto"
+                style="color: rgb(128, 128, 128); font-size: 18px; font-weight: 400; margin-top: 8px;"
+              >
+                Run 
+                <span
+                  class="css-text-901oao css-textHasAncestor-16my406"
+                  dir="auto"
+                  style="font-weight: 700;"
+                >
+                  yarn workspace web start
+                </span>
+                 to open this app in the browser.
+              </div>
+              <div
+                class="css-text-901oao"
+                dir="auto"
+                style="color: rgb(128, 128, 128); font-size: 18px; font-weight: 400; margin-top: 8px;"
+              >
+                It will share the same code from mobile, unless you create platform-specific files using the 
+                <span
+                  class="css-text-901oao css-textHasAncestor-16my406"
+                  dir="auto"
+                  style="font-weight: 700;"
+                >
+                  .web.tsx
+                </span>
+                 extension (also supports 
+                <span
+                  class="css-text-901oao css-textHasAncestor-16my406"
+                  dir="auto"
+                  style="font-weight: 700;"
+                >
+                  .android
+                </span>
+                ,
+                 
+                <span
+                  class="css-text-901oao css-textHasAncestor-16my406"
+                  dir="auto"
+                  style="font-weight: 700;"
+                >
+                  .ios
+                </span>
+                ,
+                 
+                <span
+                  class="css-text-901oao css-textHasAncestor-16my406"
+                  dir="auto"
+                  style="font-weight: 700;"
+                >
+                  .native
+                </span>
+                , etc).
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-view-1dbjc4n"
+          >
+            <div
+              style="width: 800px; height: 500px;"
+            >
+              <iframe
+                allowfullscreen=""
+                frameborder="0"
+                src="https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4#"
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

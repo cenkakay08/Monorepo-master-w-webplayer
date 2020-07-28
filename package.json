@@ -10,14 +10,15 @@
   "scripts": {
     "android": "yarn workspace mobile android",
     "compile": "tsc -b --incremental",
-    "ios": "yarn workspace mobile  ios",
+    "ios": "yarn workspace mobile ios",
     "studio": "yarn workspace mobile studio",
     "xcode": "yarn workspace mobile xcode",
     "prettier": "prettier \"**/*.{js,jsx,css,json}\"",
     "format": "npm run prettier -- --write",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
-    "validate": "npm run prettier -- --list-different && npm run lint"
+    "validate": "npm run prettier -- --list-different && npm run lint",
+    "test": "yarn workspaces run test"
   },
   "husky": {
     "hooks": {
@@ -25,9 +26,6 @@
     }
   },
   "jest": {
-    "presets": [
-      "react-native"
-    ],
     "setupTestFrameworkScriptFile": "jest-enzyme",
     "testEnvironment": "enzyme",
     "testEnvironmentOptions": {
@@ -50,8 +48,6 @@
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
     "react-dom": "^16.13.1",
-    "react-native-web-player": "^2.0.0-alpha.20",
-    "react-native-webview": "^10.3.2",
     "typescript": "3.7.5"
   }
 }
