@@ -1,4 +1,27 @@
 module.exports = {
+  
+    "semi": false,
+    "overrides": [
+      {
+        "files": "**/packages/web/**/*.{js,jsx,tsx,css,json}",
+        "options": {
+          "semi": true
+        }
+      },
+      {
+        "files": ["**/packages/mobile/**/*.{js,jsx,tsx,css,json}"],
+        "options": {
+          "semi": true
+        }
+      },
+      {
+        "files": ["**/packages/components/**/*.{js,jsx,tsx,css,json}"],
+        "options": {
+          "semi": true
+        }
+      }
+    ]
+  
   /**
    * printWidth: 80,
    * tabWidth: 2,
