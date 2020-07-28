@@ -13,41 +13,28 @@
     "ios": "yarn workspace mobile ios",
     "studio": "yarn workspace mobile studio",
     "xcode": "yarn workspace mobile xcode",
-    "prettier": "prettier \"**/*.{js,jsx,css,json}\"",
-    "format": "npm run prettier -- --write",
-    "lint": "eslint src",
-    "lint:fix": "npm run lint -- --fix",
-    "validate": "npm run prettier -- --list-different && npm run lint",
-    "test": "yarn workspaces run test"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "jest-enzyme",
-    "testEnvironment": "enzyme",
-    "testEnvironmentOptions": {
-      "enzymeAdapter": "react16"
-    }
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,css}": [
-      "npm run format",
-      "npm run lint:fix",
-      "git add"
-    ]
+    "lint": "eslint \"packages/**/*.{js,ts,tsx}\"",
+    "lint:fix": "eslint \"packages/**/*.{js,ts,tsx}\" --quiet --fix",
+    "test": "yarn workspaces run test",
+    "docs": "jsdoc -c jsdoc.conf.json"
   },
   "dependencies": {
     "react-native": "*"
   },
   "devDependencies": {
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "jest-environment-enzyme": "^7.1.2",
-    "jest-enzyme": "^7.1.2",
-    "react-dom": "^16.13.1",
-    "typescript": "3.7.5"
+    "typescript": "3.7.5",
+    "eslint": "6.8.0",
+    "prettier": "2.0.5",
+    "husky": "4.2.5",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "jsdoc": "3.6.5",
+    "better-docs": "2.3.0",
+    "jsdoc-plugin-typescript": "2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint:fix"
+    }
   }
 }

@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders the shared app 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <SafeAreaView>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={
+          Object {
+            "backgroundColor": "white",
+          }
+        }
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "backgroundColor": "#F3F3F3",
+              "paddingBottom": 40,
+              "paddingHorizontal": 32,
+              "paddingTop": 96,
+            }
+          }
+        >
+          <Image
+            accessibilityRole="image"
+            source={
+              Object {
+                "testUri": "../Libraries/NewAppScreen/components/logo.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": undefined,
+                },
+                Object {
+                  "marginBottom": -192,
+                  "marginLeft": -128,
+                  "opacity": 0.2,
+                  "overflow": "visible",
+                  "resizeMode": "cover",
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#000",
+                "fontSize": 40,
+                "fontWeight": "600",
+                "textAlign": "center",
+              }
+            }
+          >
+            Welcome to React
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "white",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "marginTop": 32,
+                "paddingHorizontal": 24,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "black",
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              Code sharing using Monorepo
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "gray",
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                  "marginTop": 8,
+                }
+              }
+            >
+              Edit
+               
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                packages/components/App.tsx
+              </Text>
+               
+              to change this screen and then come back to see your edits (in the phone or the browser).
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "marginTop": 32,
+                "paddingHorizontal": 24,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "black",
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              Web support via react-native-web
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "gray",
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                  "marginTop": 8,
+                }
+              }
+            >
+              Run
+               
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                yarn workspace web start
+              </Text>
+               
+              to open this app in the browser.
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "gray",
+                  "fontSize": 18,
+                  "fontWeight": "400",
+                  "marginTop": 8,
+                }
+              }
+            >
+              It will share the same code from mobile, unless you create platform-specific files using the
+               
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                .web.tsx
+              </Text>
+               extension (also supports 
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                .android
+              </Text>
+              ,
+               
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                .ios
+              </Text>
+              ,
+               
+              <Text
+                style={
+                  Object {
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                .native
+              </Text>
+              , etc).
+            </Text>
+          </View>
+        </View>
+        <View>
+          <Video
+            paused={false}
+            resizeMode="cover"
+            source={
+              Object {
+                "uri": "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+              }
+            }
+            style={
+              Object {
+                "height": 500,
+                "position": "relative",
+                "width": 800,
+              }
+            }
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  </View>
+</View>
+`;

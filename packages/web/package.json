@@ -20,22 +20,9 @@
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "jest": {
     "preset": "react-native-web",
-    "verbose": true,
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    }
+    "verbose": true
   },
   "browserslist": [
     ">0.2%",
@@ -44,10 +31,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/jest-dom": "4.2.4",
+    "@testing-library/react": "9.3.2",
     "babel-plugin-react-native-web": "0.12.1",
-    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-module-resolver": "3.2.0",    
     "concurrently": "5.1.0",
     "react-app-rewired": "2.1.5",
     "typescript": "3.7.5"

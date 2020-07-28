@@ -1,0 +1,29 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "include": ["packages"],
+        "includePattern": "\\.(jsx|js|ts|tsx)$",
+        "excludePattern": "(node_modules|docs|dist|__tests__|android|ios|public)"
+    },
+    "plugins": [
+        "plugins/markdown",
+        "better-docs/typescript",
+        "better-docs/component"
+    ],
+    "typescript": {
+        "moduleRoot": "packages"
+    },
+    "templates": {
+      "better-docs": {
+          "name": "My React components"
+        }
+    },
+    "opts": {
+        "destination": "docs",
+        "recurse": true,
+        "readme": "README.md"
+    }
+}

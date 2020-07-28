@@ -1,7 +1,3 @@
-/**
- * @format
- */
-
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render, waitForElement } from '@testing-library/react';
