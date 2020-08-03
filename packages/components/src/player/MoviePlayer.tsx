@@ -1,8 +1,11 @@
 // Load the module
 import React from 'react';
 import Video from 'react-native-video';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet,Dimensions } from 'react-native';
 import { MoviePlayerPropTypes, defaultProps } from './proptypes';
+const { width, height } = Dimensions.get('window');
+
+
 
 /**
  * MoviePlayer component for native which uses react-native-video package
@@ -24,17 +27,19 @@ import { MoviePlayerPropTypes, defaultProps } from './proptypes';
  * )
  */
 const MoviePlayer = (props) => {
-  const { url, width, height } = props;
+  const { width, height } = Dimensions.get('window');
+  const { url } = props;
   return (
     <View>
       <Video
         source={{ uri: url }}
-        resizeMode="cover"
+        resizeMode="contain"
         paused={false}
+        repeat={true}
         style={{
           ...styles.backgroundVideo,
           width: width,
-          height: height,
+          height: height,       
         }}
       />
     </View>
@@ -49,7 +54,9 @@ MoviePlayer.defaultProps = defaultProps;
  */
 const styles = StyleSheet.create({
   backgroundVideo: {
-    position: 'relative',
+    position: 'absolute',
+    left:0,
+    top:0,
   },
 });
 

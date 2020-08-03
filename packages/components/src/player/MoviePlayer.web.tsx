@@ -1,7 +1,7 @@
 // Load the module
 import React from 'react';
 import WebPlayer from 'react-native-web-player';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { MoviePlayerPropTypes, defaultProps } from './proptypes';
 
 /**
@@ -23,7 +23,7 @@ import { MoviePlayerPropTypes, defaultProps } from './proptypes';
 const MoviePlayer = (props) => {
   const { url, width, height } = props;
   return (
-    <View>
+    <View style={styles.backgroundVideo}>
       <WebPlayer baseURL={url} style={{ width: width, height: height }} />
     </View>
   );
@@ -33,3 +33,11 @@ MoviePlayer.propTypes = MoviePlayerPropTypes;
 MoviePlayer.defaultProps = defaultProps;
 
 export { MoviePlayer };
+
+const styles = StyleSheet.create({
+  backgroundVideo: {
+    position: 'absolute',
+    left:0,
+    top:0,
+  },
+});
