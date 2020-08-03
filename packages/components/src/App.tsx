@@ -31,13 +31,13 @@ import { HomeScreen } from './screens/HomeScreen';
  */
 export function App() {
   return (
-    <>   
-        <StatusBar hidden />
-          <SafeAreaView>
-            <View>      
-              <HomeScreen/>
-            </View>    
-         </SafeAreaView>
+    <>
+      <StatusBar hidden />
+      <SafeAreaView>
+        <View>
+          <HomeScreen />
+        </View>
+      </SafeAreaView>
     </>
   );
 }
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   fullScreen: {
-    flex: 1
+    flex: 1,
   },
   body: {
     backgroundColor: 'white',

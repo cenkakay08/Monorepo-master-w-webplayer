@@ -37,7 +37,7 @@ export { MoviePlayer };
 const styles = StyleSheet.create({
   backgroundVideo: {
     position: 'absolute',
-    left:0,
-    top:0,
+    left: 0,
+    top: 0,
   },
 });
