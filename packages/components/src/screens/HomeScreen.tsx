@@ -20,8 +20,7 @@ export function HomeScreen() {
           'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
         }
       />
-      </View>
-    
+    </View>
   );
 }
 

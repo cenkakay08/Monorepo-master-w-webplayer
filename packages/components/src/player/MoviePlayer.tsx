@@ -4,7 +4,6 @@ import Video from 'react-native-video';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { MoviePlayerPropTypes, defaultProps } from './proptypes';
 
-
 /**
  * MoviePlayer component for native which uses react-native-video package
  * @component

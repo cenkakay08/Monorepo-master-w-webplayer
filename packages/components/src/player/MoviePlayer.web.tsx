@@ -22,25 +22,24 @@ import './Player.css';
  *   </View>
  * )
  */
-const Wrapper=styled.div`
-overflow: hidden;
-
-`
-const StyledView=styled.div`
+const Wrapper = styled.div`
+  overflow: hidden;
+`;
+const StyledView = styled.div`
 -webkit-transform:scale(1.5);-moz-transform-scale(1.5);
 
-`
+`;
 
- 
 const MoviePlayer = (props) => {
   const { url, width, height } = props;
   return (
     <Wrapper>
-    <StyledView >
-      <WebPlayer  baseURL={url} style={{ width: width, height: height,}}  ></WebPlayer>
-    </StyledView>
+      <StyledView>
+        <WebPlayer
+          baseURL={url}
+          style={{ width: width, height: height }}></WebPlayer>
+      </StyledView>
     </Wrapper>
-    
   );
 };
 
