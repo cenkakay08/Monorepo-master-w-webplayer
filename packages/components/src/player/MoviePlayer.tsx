@@ -3,7 +3,7 @@ import React from 'react';
 import Video from 'react-native-video';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { MoviePlayerPropTypes, defaultProps } from './proptypes';
-const { width, height } = Dimensions.get('window');
+
 
 /**
  * MoviePlayer component for native which uses react-native-video package

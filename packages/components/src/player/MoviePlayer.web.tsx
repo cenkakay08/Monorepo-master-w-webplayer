@@ -3,6 +3,8 @@ import React from 'react';
 import WebPlayer from 'react-native-web-player';
 import { View, StyleSheet } from 'react-native';
 import { MoviePlayerPropTypes, defaultProps } from './proptypes';
+import styled from 'styled-components';
+import './Player.css';
 
 /**
  * MoviePlayer component for web which uses react-native-web-player package
@@ -20,12 +22,25 @@ import { MoviePlayerPropTypes, defaultProps } from './proptypes';
  *   </View>
  * )
  */
+const Wrapper=styled.div`
+overflow: hidden;
+
+`
+const StyledView=styled.div`
+-webkit-transform:scale(1.5);-moz-transform-scale(1.5);
+
+`
+
+ 
 const MoviePlayer = (props) => {
   const { url, width, height } = props;
   return (
-    <View style={styles.backgroundVideo}>
-      <WebPlayer baseURL={url} style={{ width: width, height: height }} />
-    </View>
+    <Wrapper>
+    <StyledView >
+      <WebPlayer  baseURL={url} style={{ width: width, height: height,}}  ></WebPlayer>
+    </StyledView>
+    </Wrapper>
+    
   );
 };
 
