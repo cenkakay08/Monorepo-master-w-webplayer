@@ -8,8 +8,8 @@ import {
   View,
 } from 'react-native';
 
-import { AppHeader } from './commons/header/AppHeader';
-import { MoviePlayer } from './player/MoviePlayer';
+import { AppHeader } from '../components/commons/header/AppHeader';
+import { MoviePlayer } from '../components/player/MoviePlayer';
 
 /**
  * App component as an entry point for all platforms
@@ -28,7 +28,7 @@ import { MoviePlayer } from './player/MoviePlayer';
  *   </>
  * )
  */
-export function App() {
+const Home = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -128,4 +128,4 @@ const styles = StyleSheet.create({
   },
 });
 
-declare let global: any;
+export default Home;

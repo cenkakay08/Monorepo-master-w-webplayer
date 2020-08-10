@@ -5,12 +5,11 @@
     },
     "source": {
         "include": ["packages"],
-        "includePattern": "\\.(jsx|js|ts|tsx)$",
-        "excludePattern": "(node_modules|docs|dist|__tests__|android|ios|public)"
+        "includePattern": "\\.(js|jsx)$",
+        "excludePattern": "(node_modules|docs|__tests__|android|ios|public)"
     },
     "plugins": [
         "plugins/markdown",
-        "better-docs/typescript",
         "better-docs/component"
     ],
     "typescript": {

@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-native/extend-expect';
 import { render, waitForElement } from '@testing-library/react-native';
 
-import { App } from 'components/src/App';
+import { App } from 'shared/src/App';
 
 jest.mock('react-native-video', () => 'Video');
 

@@ -9,7 +9,6 @@
   },
   "scripts": {
     "android": "yarn workspace mobile android",
-    "compile": "tsc -b --incremental",
     "ios": "yarn workspace mobile ios",
     "studio": "yarn workspace mobile studio",
     "xcode": "yarn workspace mobile xcode",
@@ -23,14 +22,14 @@
   },
   "devDependencies": {
     "typescript": "3.7.5",
+    "babel-eslint": "10.1.0",
     "eslint": "6.8.0",
     "prettier": "2.0.5",
     "husky": "4.2.5",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "jsdoc": "3.6.5",
-    "better-docs": "2.3.0",
-    "jsdoc-plugin-typescript": "2.0.5"
+    "better-docs": "2.3.0"
   },
   "husky": {
     "hooks": {

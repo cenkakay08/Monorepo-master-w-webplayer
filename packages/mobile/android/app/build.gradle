@@ -191,7 +191,8 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules    
-    compile project(':react-native-video')
+    implementation project(':react-native-video')
+    implementation project(':@react-native-community_async-storage')
     implementation "androidx.appcompat:appcompat:1.0.0"
 
     if (enableHermes) {
