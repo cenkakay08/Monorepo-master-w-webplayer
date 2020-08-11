@@ -1,36 +1,31 @@
 import './i18n';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import I18n from 'i18n-js';
+import PropTypes from 'prop-types';
 import useStorage from './services';
-import { LOCALES } from './languages/index';
+import LOCALES from './languages/index';
 import translate from './translate';
 
 const LocaleContext = React.createContext();
 
-LocaleContextProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export const LocaleContextProvider = (props) => {
+export const LocaleContextProvider = ({ children }) => {
   const [locale, changeLocale] = useStorage('@language', LOCALES.ENGLISH);
   I18n.locale = locale.name;
 
-  const _changeLocale = (locale) => {
-    I18n.locale = locale.name;
-    changeLocale(locale);
+  const changeLocaleLang = (locales) => {
+    I18n.locale = locales.name;
+    changeLocale(locales);
   };
-
-  return (
-    <LocaleContext.Provider
-      value={{
-        ...I18n,
-        localeProvider: locale,
-        getString: translate,
-        changeLocale: _changeLocale,
-      }}>
-      {props.children}
-    </LocaleContext.Provider>
-  );
+  const p = {
+    ...I18n,
+    localeProvider: locale,
+    getString: translate,
+    changeLocale: changeLocaleLang,
+  };
+  return <LocaleContext.Provider value={p}>{children}</LocaleContext.Provider>;
+};
+LocaleContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default LocaleContext;

@@ -12,11 +12,25 @@
  * @import { useKeyPress } from '../redux/KeyPress';
  * @import { AbstractKeyNames } from '../AbstractKeyNames';
  */
-import PropTypes from 'prop-types';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import { useKeyPress } from '../redux/KeyPress';
+import useKeyPress from '../redux/KeyPress';
 import { AbstractKeyNames } from '../AbstractKeyNames';
+
+/**
+ * This function checks if the prop function is defined or not, and calls the prop function if it is defined.
+ *
+ * @param {*} propFunc This parameter should be prop function, like prop.onLeft, prop.onRight, ...
+ * @example
+ * callPropFunction(prop.onLeft);
+ * callPropFunction(prop.onReft);
+ */
+const callPropFunction = (propFunc) => {
+  if (propFunc !== undefined) {
+    propFunc();
+  }
+};
 
 /**
  * @description KeyBinder component to bind catched keys to prop functions.
@@ -24,11 +38,13 @@ import { AbstractKeyNames } from '../AbstractKeyNames';
  */
 const KeyBinder = (props) => {
   // Catch key events and add the pressed key information to global redux state
+
+  // eslint-disable-next-line react/destructuring-assignment
   useKeyPress(props.store);
 
   // Handle state changes
   const handleChange = () => {
-    let abstractKeyName = props.store.getState().keys.pressedKeyAbstractName;
+    const abstractKeyName = props.store.getState().keys.pressedKeyAbstractName;
     if (
       abstractKeyName === '' ||
       abstractKeyName === undefined ||
@@ -556,20 +572,6 @@ KeyBinder.propTypes = {
    * @default false
    * */
   global: PropTypes.bool,
-};
-
-/**
- * This function checks if the prop function is defined or not, and calls the prop function if it is defined.
- *
- * @param {*} propFunc This parameter should be prop function, like prop.onLeft, prop.onRight, ...
- * @example
- * callPropFunction(prop.onLeft);
- * callPropFunction(prop.onReft);
- */
-const callPropFunction = (propFunc) => {
-  if (propFunc !== undefined) {
-    propFunc();
-  }
 };
 
 /** Export component */

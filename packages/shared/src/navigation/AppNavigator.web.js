@@ -1,10 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router';
-import Home from '../screens/Home';
+import { Route, Router } from 'react-router';
 import history from 'dt-navigation/src/nativenavigation/history';
 import { View } from 'react-native';
-import { Router } from 'react-router';
 import { withRouter } from 'react-router-dom';
+import Home from '../screens/Home';
 import NavigationRoutes from './NavigationRoutes';
 
 const AppNavigator = () => (

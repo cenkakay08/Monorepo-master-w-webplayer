@@ -21,15 +21,17 @@
     "react-native": "*"
   },
   "devDependencies": {
-    "typescript": "3.7.5",
-    "babel-eslint": "10.1.0",
-    "eslint": "6.8.0",
-    "prettier": "2.0.5",
-    "husky": "4.2.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.6.0",
+    "better-docs": "2.3.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
+    "husky": "4.2.5",
     "jsdoc": "3.6.5",
-    "better-docs": "2.3.0"
+    "prettier": "2.0.5",
+    "prop-types": "^15.5.7",
+    "typescript": "3.7.5"
   },
   "husky": {
     "hooks": {

@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { KeyBinder, keysReducer } from 'key-event-handler';
-const Handler = ({ network, theme }) => {
-  if (network.offline && !!network.isInitiated) alert('network offline');
-  if (network.online && !!network.isInitiated) alert('network online');
+import { KeyBinder } from 'key-event-handler';
+import PropTypes from 'prop-types';
+
+const Handler = ({ network, theme, keysStore }) => {
+  if (network.offline && !!network.isInitiated) console.log('network offline');
+  if (network.online && !!network.isInitiated) console.log('network online');
+  console.log(theme);
   return (
     <KeyBinder
       store={keysStore}
@@ -18,8 +21,14 @@ const Handler = ({ network, theme }) => {
 };
 
 const mapStateToProps = (state) => ({
-  //theme: state.app.theme,
+  // theme: state.app.theme,
   network: state.network,
 });
+
+Handler.propTypes = {
+  network: PropTypes.object,
+  theme: PropTypes.object,
+  keysStore: PropTypes.object,
+};
 
 export default connect(mapStateToProps)(Handler);

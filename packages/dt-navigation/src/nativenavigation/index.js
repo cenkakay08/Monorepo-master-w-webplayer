@@ -8,4 +8,4 @@ const useNativeNavigation = () => {
   };
 };
 
-export { useNativeNavigation };
+export default { useNativeNavigation };

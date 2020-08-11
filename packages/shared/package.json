@@ -6,8 +6,10 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "navigation": "0.0.1",
-    "key-event-handler":"0.0.1",
+    "dt-navigation": "0.0.1",
+    "reduxstore": "0.0.1",
+    "i18n": "0.0.1",
+    "key-event-handler": "0.0.1",
     "react": "16.12.0",
     "react-native": "0.61.5",
     "react-native-web": "0.12.1",
@@ -17,6 +19,6 @@
     "@react-navigation/native": "5.6.1",
     "@react-navigation/stack": "5.6.2",
     "react-router": "5.2.0",
-    "react-router-dom":"5.2.0"
+    "react-router-dom": "5.2.0"
   }
 }

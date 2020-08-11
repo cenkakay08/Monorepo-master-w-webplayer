@@ -8,7 +8,7 @@
  * @import { GetAbstractKeyName } from '../util';
  */
 import { NAME } from '../constants';
-import { GetAbstractKeyName } from '../util';
+import GetAbstractKeyName from '../util';
 
 /** Action type INIT */
 export const INIT = `${NAME}/INIT`;

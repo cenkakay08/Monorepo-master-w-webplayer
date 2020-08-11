@@ -32,27 +32,21 @@ export const initialKeyState = {
 export const keysReducer = (state = initialKeyState, action) => {
   switch (action.type) {
     case INIT:
-      return (state = initialKeyState);
-      break;
+      return state;
     case SET_KEY_EVENT:
       return {
         ...state,
         pressedKeyEvent: action.payload.pressedKeyEvent,
         pressedKeyAbstractName: action.payload.pressedKeyAbstractName,
       };
-      break;
     case REMOVE_KEY_EVENT:
       return { ...state, pressedKeyEvent: '', pressedKeyAbstractName: '' };
-      break;
     case ADD_LISTENER:
       return { ...state, eventListenerAttached: true };
-      break;
     case REMOVE_LISTENER:
       return { ...state, eventListenerAttached: false };
-      break;
 
     default:
       return state;
-      break;
   }
 };

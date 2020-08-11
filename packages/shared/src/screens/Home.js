@@ -7,10 +7,9 @@ import {
   Text,
   View,
 } from 'react-native';
-
+import useTranslation from 'i18n';
 import { AppHeader } from '../components/commons/header/AppHeader';
 import { MoviePlayer } from '../components/player/MoviePlayer';
-import useTranslation from 'i18n';
 
 /**
  * App component as an entry point for all platforms
@@ -48,10 +47,7 @@ const Home = () => {
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>{getString('welcome')}</Text>
               <Text style={styles.sectionDescription}>
-                Edit{' '}
-                <Text style={styles.highlight}>
-                  packages/components/App.tsx
-                </Text>{' '}
+                Edit <Text style={styles.highlight}>packages/components/App.tsx</Text> to change
                 to change this screen and then come back to see your edits (in
                 the phone or the browser).
               </Text>
@@ -78,7 +74,7 @@ const Home = () => {
           <MoviePlayer
             width={800}
             height={500}
-            url={'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'}
+            url="https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
           />
         </ScrollView>
       </SafeAreaView>

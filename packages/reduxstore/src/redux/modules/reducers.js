@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import appReducer from './app';
 import { keysReducer } from 'key-event-handler';
+import appReducer from './app';
 import networkReducer from './network';
 
 const rootReducer = combineReducers({

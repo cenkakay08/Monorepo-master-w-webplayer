@@ -39,4 +39,4 @@ const useNativeNavigation = () => {
     goBack,
   };
 };
-export { useNativeNavigation };
+export default { useNativeNavigation };
