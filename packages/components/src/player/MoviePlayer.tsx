@@ -51,7 +51,7 @@ MoviePlayer.defaultProps = defaultProps;
  */
 const styles = StyleSheet.create({
   backgroundVideo: {
-    position: 'absolute',
+    position: 'relative',
     left: 0,
     top: 0,
   },
