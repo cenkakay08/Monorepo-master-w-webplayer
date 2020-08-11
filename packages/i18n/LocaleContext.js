@@ -7,6 +7,10 @@ import translate from './translate';
 
 const LocaleContext = React.createContext();
 
+LocaleContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export const LocaleContextProvider = (props) => {
   const [locale, changeLocale] = useStorage('@language', LOCALES.ENGLISH);
   I18n.locale = locale.name;
