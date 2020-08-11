@@ -4,7 +4,7 @@ import WebPlayer from 'react-native-web-player';
 import { View, StyleSheet } from 'react-native';
 import { MoviePlayerPropTypes, defaultProps } from './proptypes';
 import styled from 'styled-components';
-import './Player.css';
+
 
 /**
  * MoviePlayer component for web which uses react-native-web-player package
