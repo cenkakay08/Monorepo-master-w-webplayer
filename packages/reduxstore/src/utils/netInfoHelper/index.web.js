@@ -2,6 +2,7 @@ class netInfoHelper {
   constructor(listener) {
     this.listener = listener;
   }
+
   addNetinfoEventListener() {
     try {
       window.addEventListener(
@@ -16,6 +17,7 @@ class netInfoHelper {
       console.log('error', error);
     }
   }
+
   removeNetinfoEventListener() {
     window.removeEventListener(
       'online',
@@ -26,6 +28,7 @@ class netInfoHelper {
       this.handleConnectivityChange.bind(this),
     );
   }
+
   handleConnectivityChange(event) {
     const condition = event.type === 'offline' ? 'offline' : 'online';
     this.listener(condition);

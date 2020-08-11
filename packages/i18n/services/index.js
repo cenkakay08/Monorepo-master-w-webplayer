@@ -41,10 +41,9 @@ async function saveValue(key, value) {
     if (value == null) {
       await removeValue(key);
       return { success: true };
-    } else {
-      await AsyncStorage.setItem(key, value);
-      return { success: true };
     }
+    await AsyncStorage.setItem(key, value);
+    return { success: true };
   } catch (e) {
     console.log('LOG_Async Storage access Failed', e);
     return { error: e };

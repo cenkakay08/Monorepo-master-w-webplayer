@@ -47,9 +47,14 @@ const Home = () => {
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>{getString('welcome')}</Text>
               <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>packages/components/App.tsx</Text> to change
-                to change this screen and then come back to see your edits (in
-                the phone or the browser).
+                Edit
+{' '}
+                <Text style={styles.highlight}>
+                  packages/components/App.tsx
+                </Text>
+{' '}
+                to change to change this screen and then come back to see your
+                edits (in the phone or the browser).
               </Text>
             </View>
             <View style={styles.sectionContainer}>
@@ -65,8 +70,11 @@ const Home = () => {
                 It will share the same code from mobile, unless you create
                 platform-specific files using the{' '}
                 <Text style={styles.highlight}>.web.tsx</Text> extension (also
-                supports <Text style={styles.highlight}>.android</Text>,{' '}
-                <Text style={styles.highlight}>.ios</Text>,{' '}
+                supports
+                <Text style={styles.highlight}>.android</Text>
+,{' '}
+                <Text style={styles.highlight}>.ios</Text>,
+{' '}
                 <Text style={styles.highlight}>.native</Text>, etc).
               </Text>
             </View>

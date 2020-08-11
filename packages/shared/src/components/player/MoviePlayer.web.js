@@ -24,7 +24,7 @@ const MoviePlayer = (props) => {
   const { url, width, height } = props;
   return (
     <View>
-      <WebPlayer baseURL={url} style={{ width: width, height: height }} />
+      <WebPlayer baseURL={url} style={{ width, height }} />
     </View>
   );
 };

@@ -33,8 +33,8 @@ const MoviePlayer = (props) => {
         paused={false}
         style={{
           ...styles.backgroundVideo,
-          width: width,
-          height: height,
+          width,
+          height,
         }}
       />
     </View>

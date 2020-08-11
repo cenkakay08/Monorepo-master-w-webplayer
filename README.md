@@ -1,11 +1,6 @@
 # React Native [Web] + Monorepo
 ## 100% code sharing between Web, iOS and Android
 
-This is the source code from [this tutorial](https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej).
-
-![article-cover](https://user-images.githubusercontent.com/619186/64933790-1fc27680-d81d-11e9-8077-64a1066b7c17.png)
-
-
 ### How to run
 
 _Requirements: [React Native](https://facebook.github.io/react-native/docs/getting-started.html#native) (last tested on react-native@0.61)_
@@ -28,27 +23,80 @@ _Requirements: [React Native](https://facebook.github.io/react-native/docs/getti
     - Via CLI
       - _You may need to launch your device emulator before the next command_
       - `$ yarn android` or  `$ yarn ios`
+## Used Tech
 
-### Author
+  #### VS Code Ext
+  * https://github.com/zabel-xyz/local-history
+  * https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+  * https://marketplace.visualstudio.com/itemitemName=formulahendry.auto-close-tag
+  * https://marketplace.visualstudio.com/itemitemName=formulahendry.auto-rename-tag
+  * https://marketplace.visualstudio.com/itemitemName=steoates.autoimport
+  * https://marketplace.visualstudio.com/itemitemName=naumovs.color-highlight
+  * https://marketplace.visualstudio.com/itemitemName=vincaslt.highlight-matching-tag
+  * https://marketplace.visualstudio.com/itemitemName=msjsdiag.vscode-react-native
+  * https://marketplace.visualstudio.com/itemitemName=jpoissonnier.vscode-styled-components
 
-Follow me on Twitter: [@brunolemos](https://twitter.com/brunolemos)<br/>
+  #### Eslint
+  [.eslintrc](./.eslintrc.js)
 
-<a href="https://twitter.com/brunolemos" target="_blank"><img src="https://github.com/brunolemos.png?size=100" height="100" /></a>
+  #### Pretier
+   rules:
+  * semi: true,
+  * trailingComma: "all",
+  * singleQuote: true,
+  * jsxBracketSameLine: true,
+  * printWidth: 80,
+  * tabWidth: 2,
+  * singleQuote: true,
+  * useTabs: false
+
+### file
+   [.editorconfig](./.editorconfig)
+   to use this file install this vs ext:
+
+   ```
+   ext install EditorConfig
+   ```
+#### Dependecy
+    "babel-eslint"
+    "better-docs"
+    "eslint"
+    "eslint-config-airbnb"
+    "eslint-config-prettier"
+    "eslint-plugin-jsx-a11y"
+    "eslint-plugin-prettier"
+    "husky"
+    "jsdoc"
+    "prettier"
+    "prop-types"
+    "typescript"
+    "i18n-js"
+    "react"
+    "react-art"
+    "react-dom"
+    "react-native-web"
+    "react-scripts"
+    "react-native-video"
+    "react-native-web-player"
+    "react-native-gesture-handler"
+    "@react-navigation/native"
+    "@react-navigation/stack"
+    "react-router"
+    "react-router-dom"
+    "@react-native-community/async-storage"
+    "react-redux"
+    "redux"
+    "redux-persist"
+    "redux-saga"
+    "reduxsauce"
+    "redux-devtools-extension"
+    "immer"
+    "@react-native-community/eslint-config"
+    "@testing-library/jest-native"
+    "@testing-library/react-native"
+    "metro-react-native-babel-preset"
+    "babel-jest"
+    "jest"
+    "react-test-renderer"
 
 
-## Who is using this on production
-
-Check out [DevHub](https://github.com/devhubapp/devhub).
-The main difference is that it supports Desktop (Electron) in addition to Web, iOS and Android.
-
-![DevHub Desktop](https://user-images.githubusercontent.com/619186/63945240-59d40000-ca49-11e9-98c1-353225f8dcf6.jpg)
-
-![DevHub Menubar](https://github.com/devhubapp/devhub/raw/master/landing/static/screenshots/devhub-desktop-menubar-banner.jpg)
-
-<p align="center">
-  <img alt="DevHub Mobile - Notifications" height="620" src="https://github.com/devhubapp/devhub/raw/master/landing/static/screenshots/iphone-notifications-dark.jpg" />
-  <img alt="DevHub Mobile - Notification Filters" height="620" src="https://github.com/devhubapp/devhub/raw/master/landing/static/screenshots/iphone-notifications-filters-dark.jpg" />
-  <img alt="DevHub Mobile - Events" height="620" src="https://github.com/devhubapp/devhub/raw/master/landing/static/screenshots/iphone-events-dark.jpg" />
-</p>
-
-<br/>
