@@ -34,7 +34,7 @@ export function App() {
     <>
       <StatusBar hidden />
       <SafeAreaView>
-        <View style={{height:1080,width:1920}}>
+        <View style={{ height: 1080, width: 1920 }}>
           <HomeScreen />
         </View>
       </SafeAreaView>
