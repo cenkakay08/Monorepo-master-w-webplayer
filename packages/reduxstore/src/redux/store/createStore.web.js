@@ -10,7 +10,7 @@ const persistConfig = {
   key: 'app',
   storage,
   version: 1,
-  blacklist: [],
+  blacklist: ['keys'],
 };
 
 export default function configureStore() {

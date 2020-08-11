@@ -6,7 +6,7 @@ const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 
 // our packages that will now be included in the CRA build step
-const appIncludes = [resolveApp('src'), resolveApp('../navigation/src'), resolveApp('../reduxstore/src'), resolveApp('../shared/src')];
+const appIncludes = [resolveApp('src'), resolveApp('../dt-navigation/src'), resolveApp('../reduxstore/src'), resolveApp('../shared/src'),resolveApp('../key-event-handler/src'),resolveApp('../i18n')];
 
 module.exports = function override(config, env) {
   // allow importing from outside of src folder

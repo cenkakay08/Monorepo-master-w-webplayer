@@ -7,6 +7,9 @@
     },
     "dependencies": {
         "react": "16.12.0",
+        "key-event-handler":"0.0.1",
+        "dt-navigation":"0.0.1",
+        "i18n":"0.0.1",
         "@react-native-community/async-storage": "1.11.0",
         "react-redux": "7.2.1",
         "redux": "4.0.5",

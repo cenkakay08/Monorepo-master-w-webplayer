@@ -1,0 +1,13 @@
+{
+  "name": "dt-navigation",
+  "version": "0.0.1",
+  "dependencies": {
+    "@react-navigation/native": "5.6.1",
+    "react-native-gesture-handler": "^1.6.1",
+    "history": "5.0.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}

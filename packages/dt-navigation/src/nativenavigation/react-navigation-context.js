@@ -5,7 +5,6 @@ export const navigationRef = React.createRef();
  * Navigate current screem with given @param {Routes} to and pass @param {JSON} params
  */
 export function navigate(to, params) {
-  alert('navigate' + JSON.stringify(navigationRef));
   navigationRef.current?.navigate(to, params);
 }
 

@@ -10,6 +10,7 @@ import {
 
 import { AppHeader } from '../components/commons/header/AppHeader';
 import { MoviePlayer } from '../components/player/MoviePlayer';
+import useTranslation from 'i18n';
 
 /**
  * App component as an entry point for all platforms
@@ -29,6 +30,7 @@ import { MoviePlayer } from '../components/player/MoviePlayer';
  * )
  */
 const Home = () => {
+  const { getString } = useTranslation();
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -44,9 +46,7 @@ const Home = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>
-                Code sharing using Monorepo
-              </Text>
+              <Text style={styles.sectionTitle}>{getString('welcome')}</Text>
               <Text style={styles.sectionDescription}>
                 Edit{' '}
                 <Text style={styles.highlight}>
@@ -84,7 +84,7 @@ const Home = () => {
       </SafeAreaView>
     </>
   );
-}
+};
 
 /**
  * stylesheet definitions for App

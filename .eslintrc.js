@@ -25,5 +25,9 @@ module.exports = {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     // TODO : think about this rule, if it is better to enable or disable it?    
+    "prettier/prettier": ["error", {
+     "endOfLine":"auto"
+      
+   }],
   }
 };

@@ -1,0 +1,34 @@
+{
+  "name": "key-event-handler",
+  "version": "0.0.1",
+  "description": "Key event catching and emitting for web(keyboard), android tv or apple tv remotes, and other tv remotes.",
+  "keywords": [
+    "key",
+    "event",
+    "catch",
+    "emit",
+    "handle",
+    "remote",
+    "tv"
+  ],
+  "author": "DIGITURK\\DTHSARI <hamza.sari@digiturk.com.tr>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://code.digiturk.net/STBCollection/BEINCONNECT%20Software/_git/STB.BeinConnect.UI"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
