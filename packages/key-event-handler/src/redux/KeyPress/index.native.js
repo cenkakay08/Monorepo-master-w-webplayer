@@ -16,6 +16,8 @@ import {
   addListener,
   removeListener,
 } from '../actions';
+import { isBlocked, block } from '../../block';
+import { DEBOUNCE_TIME_FOR_LONG_PRESS } from '../../constants';
 
 /**
  * Hook function for key press event for native.
@@ -25,33 +27,63 @@ import {
 export const useKeyPress = (store) => {
   let tvEventHandler;
 
+  let totalLongPressStartTime = 0;
+  let longPressStartTime = 0;
+  let listenForKeyUp = false;
+  let keyEvent = null;
+  let longPress = false;
+  let debounceCount = 0;
+
   const enableTVEventHandler = () => {
     tvEventHandler = new TVEventHandler();
     tvEventHandler.enable(this, (cmp, evt) => {
       // eventKeyAction is an integer value representing button press(key down) and release(key up). "key up" is 1, "key down" is 0.
       if (evt && evt.eventKeyAction === 0) {
         // 0 is key down event
-        store.dispatch(
-          setKeyEvent({
-            type: 'keydown',
-            code: '',
-            key: evt.eventType,
-            keyCode: evt.eventType,
-          }),
-        );
+        keyEvent = {
+          type: 'keydown',
+          code: '',
+          key: evt.eventType,
+          keyCode: evt.eventType,
+        };
+
+        if (!listenForKeyUp) {
+          // started pressing
+          totalLongPressStartTime = Date.now();
+          longPressStartTime = Date.now();
+          listenForKeyUp = true;
+        } else if (!isBlocked()) {
+          // still pressing
+          longPress = true;
+          block();
+          if (Date.now() - longPressStartTime >= DEBOUNCE_TIME_FOR_LONG_PRESS) {
+            longPressStartTime = 0;
+            debounceCount += 1;
+            store.dispatch(
+              setKeyEvent(
+                keyEvent,
+                longPress,
+                debounceCount,
+                Date.now() - totalLongPressStartTime,
+              ),
+            );
+          }
+        }
       } else if (evt && evt.eventKeyAction === 1) {
         // 1 is key up event
+        listenForKeyUp = false;
+        debounceCount = 0;
+        const totalLongPressedTime = Date.now() - totalLongPressStartTime;
+
+        if (totalLongPressedTime < DEBOUNCE_TIME_FOR_LONG_PRESS) {
+          store.dispatch(
+            setKeyEvent(keyEvent, longPress, 0, totalLongPressedTime),
+          );
+        }
         store.dispatch(removeKeyEvent());
+        longPress = false;
       } else if (evt && evt.eventKeyAction === -1) {
         // 'blur', 'focus' events as evt.eventType
-        store.dispatch(
-          setKeyEvent({
-            type: '',
-            code: '',
-            key: evt.eventType,
-            keyCode: evt.eventType,
-          }),
-        );
       }
     });
   };

@@ -34,12 +34,20 @@ export const init = () => {
  * @param {*} keyEvent
  * @returns {JSON} action json object
  */
-export const setKeyEvent = (keyEvent) => {
+export const setKeyEvent = (
+  keyEvent,
+  longPress,
+  debounceCount,
+  longPressTime,
+) => {
   return {
     type: SET_KEY_EVENT,
     payload: {
       pressedKeyEvent: keyEvent,
       pressedKeyAbstractName: GetAbstractKeyName(keyEvent.keyCode),
+      longPress,
+      debounceCount,
+      longPressTime,
     },
   };
 };

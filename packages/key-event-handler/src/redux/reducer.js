@@ -21,6 +21,9 @@ export const initialKeyState = {
   pressedKeyEvent: '',
   pressedKeyAbstractName: '',
   eventListenerAttached: false,
+  longPress: false,
+  debounceCount: 0,
+  longPressTime: 0,
 };
 
 /**
@@ -38,9 +41,19 @@ export const keysReducer = (state = initialKeyState, action) => {
         ...state,
         pressedKeyEvent: action.payload.pressedKeyEvent,
         pressedKeyAbstractName: action.payload.pressedKeyAbstractName,
+        longPress: action.payload.longPress,
+        debounceCount: action.payload.debounceCount,
+        longPressTime: action.payload.longPressTime,
       };
     case REMOVE_KEY_EVENT:
-      return { ...state, pressedKeyEvent: '', pressedKeyAbstractName: '' };
+      return {
+        ...state,
+        pressedKeyEvent: '',
+        pressedKeyAbstractName: '',
+        longPress: false,
+        debounceCount: 0,
+        longPressTime: 0,
+      };
     case ADD_LISTENER:
       return { ...state, eventListenerAttached: true };
     case REMOVE_LISTENER:

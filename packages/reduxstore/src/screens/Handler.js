@@ -10,10 +10,11 @@ const Handler = ({ network, theme, keysStore }) => {
     <KeyBinder
       store={keysStore}
       onVolUp={() => {
-        console.log('on vol up - global');
+        console.error('on vol up - global');
+        console.error(keysStore.getState().keys);
       }}
       onVolDown={() => {
-        console.log('on vol down - global');
+        console.error('on vol down - global');
       }}
     />
   );

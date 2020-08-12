@@ -15,7 +15,7 @@ import { NAME } from './constants';
  * globalStore.getState()[NAME];	// getter method for getting store state values, NAME is global constant variable in constants.js file at the root directory of the package
  * globalStore.dispatch(action);	// setter method for updating store state values via actions
  */
-export let globalStore = {
+let globalStore = {
   dispatch: () => ({}),
   getState: () => {
     return { [NAME]: {} };
@@ -26,7 +26,10 @@ export let globalStore = {
  * Function to update store with given store parameter.
  * @param {*} store
  */
-export const updateStore = (store) => (globalStore = store);
+export const updateStore = (store) => {
+  globalStore = store;
+  return store;
+};
 /**
  * Function to get store.
  * @returns {*} keys store
