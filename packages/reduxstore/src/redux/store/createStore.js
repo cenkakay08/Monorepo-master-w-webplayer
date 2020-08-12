@@ -1,16 +1,28 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import AsyncStorage from '@react-native-community/async-storage';
+import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from '../modules/reducers';
 import rootSagas from '../sagas';
 
 const persistConfig = {
   key: 'app',
-  storage: AsyncStorage,
+  storage,
   version: 1,
   blacklist: ['keys'],
+};
+
+const logger = (store) => (next) => (action) => {
+  next(action);
+  if (__DEV__) {
+    console.group('reduxlogger');
+    console.log('Action Payload:');
+    console.table(action.payload);
+    console.log('Store State:');
+    console.table(store.getState());
+    console.groupEnd('reduxlogger');
+  }
 };
 
 export default function configureStore() {
@@ -23,7 +35,7 @@ export default function configureStore() {
 
   const store = createStore(
     persistedReducer,
-    appropriatedCompose(applyMiddleware(sagaMiddleware)),
+    appropriatedCompose(applyMiddleware(sagaMiddleware, logger)),
   );
 
   store.persistor = persistStore(store, null, () =>

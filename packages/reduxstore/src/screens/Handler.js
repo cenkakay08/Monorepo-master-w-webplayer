@@ -4,9 +4,8 @@ import { KeyBinder } from 'key-event-handler';
 import PropTypes from 'prop-types';
 
 const Handler = ({ network, theme, keysStore }) => {
-  if (network.offline && !!network.isInitiated) console.log('network offline');
-  if (network.online && !!network.isInitiated) console.log('network online');
-  console.log(theme);
+  if (network.offline && !network.isInitiated) console.log('network offline');
+  if (network.online && !network.isInitiated) console.log('network online');
   return (
     <KeyBinder
       store={keysStore}
