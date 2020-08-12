@@ -4,9 +4,11 @@ import { css } from 'styled-components';
 export default TextInput;
 
 export const extraStyle = css`
-	:focus { outline: none; }
-	::placeholder {
-		color: ${({ theme }) => theme.colors.dimmed};
-		font-size: 16px;
-	}
+  :focus {
+    outline: none;
+  }
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.dimmed};
+    font-size: 16px;
+  }
 `;

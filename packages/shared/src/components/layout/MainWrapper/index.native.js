@@ -5,19 +5,19 @@ import View from '../../primitives/View';
 import { mainWrapperStyle } from '../../../styles';
 
 const StyledSafeAreaView = styled(SafeAreaView)`
-	${mainWrapperStyle}
+  ${mainWrapperStyle}
 `;
 
 StyledSafeAreaView.defaultProps = {
-	variant: 'default',
+  variant: 'default',
 };
 
 const MainWrapper = ({ children, ...props }) => {
-	return (
-		<StyledSafeAreaView {...props}>
-			<View flex={1} children={children} />
-		</StyledSafeAreaView>
-	);
+  return (
+    <StyledSafeAreaView {...props}>
+      <View flex={1} children={children} />
+    </StyledSafeAreaView>
+  );
 };
 
 export default MainWrapper;

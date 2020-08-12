@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { viewStyle } from '../../../styles';
 
 export const StyledView = styled(View)`
-	${viewStyle}
+  ${viewStyle}
 `;
 
 export default StyledView;

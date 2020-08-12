@@ -4,12 +4,12 @@ import View from '../../primitives/View';
 import { mainWrapperStyle } from '../../../styles';
 
 const MainWrapper = styled(View)`
-	align-items: center;
-	${mainWrapperStyle}
+  align-items: center;
+  ${mainWrapperStyle}
 `;
 
 MainWrapper.defaultProps = {
-	variant: 'default'
+  variant: 'default',
 };
 
 export default MainWrapper;

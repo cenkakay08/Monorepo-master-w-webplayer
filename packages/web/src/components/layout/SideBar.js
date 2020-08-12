@@ -13,27 +13,25 @@ const Wrapper = styled(View)`
 `;
 
 class SideBar extends PureComponent {
-	render() {
-		const { location, history } = this.props;
+  render() {
+    const { location, history } = this.props;
 
-		if (location.pathname === '/') return null;
+    if (location.pathname === '/') return null;
 
-		return (
-			<Wrapper>
-				<Touchable
-					px={20}
-					py={20}
-					flexDirection='row'
-					onPress={() => history.push('/')}
-				>
-					<Icon name='home' color='white' />
-					<Text variant='white'>
-						Home
-					</Text>
-				</Touchable>
-			</Wrapper>
-		);
-	}
+    return (
+      <Wrapper>
+        <Touchable
+          px={20}
+          py={20}
+          flexDirection="row"
+          onPress={() => history.push('/')}
+        >
+          <Icon name="home" color="white" />
+          <Text variant="white">Home</Text>
+        </Touchable>
+      </Wrapper>
+    );
+  }
 }
 
 export default withRouter(SideBar);

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import useTranslation from 'i18n';
+import styled from 'styled-components/native';
 import Text, { Heading3, Heading2 } from '../components/primitives/Text';
 import View from '../components/primitives/View';
 import Container from '../components/layout/Container';
@@ -13,15 +15,13 @@ import ScrollView from '../components/common/ScrollView';
 import TextInput from '../components/common/Form/TextInput';
 import Image from '../components/primitives/Image';
 import { Actions } from '../../../reduxstore/src/redux/modules/app';
-import useTranslation from 'i18n';
 import { MoviePlayer } from '../components/player/MoviePlayer';
-import styled from 'styled-components/native';
 
 const toggleThemeName = (theme) => (theme === 'light' ? 'dark' : 'light');
 
 const MyImage = styled.Image`
-width: 400px;
-height: 400px;
+  width: 400px;
+  height: 400px;
 `;
 class Home extends Component {
   state = { value: '' };
@@ -42,7 +42,10 @@ class Home extends Component {
           <Section>
             <Heading3 m={10}>Theming</Heading3>
 
-            <Text>Current Theme: {theme}</Text>
+            <Text>
+              Current Theme:
+              {theme}
+            </Text>
 
             <Button
               text={`Use theme ${toggleThemeName(theme)}`}
@@ -80,12 +83,11 @@ class Home extends Component {
                   variant="orange">
                   <Icon name="assessment" color="white" />
                   <Text variant="white">Assessments</Text>
-
                 </Paper>
                 <Paper>
-                <MyImage
+                  <MyImage
                     source={{ uri: 'https://reactjs.org/logo-og.png' }}
-                    />
+                  />
                 </Paper>
               </View>
             </View>

@@ -3,15 +3,13 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { LocaleContextProvider } from 'i18n/LocaleContext';
 import { keysReducer } from 'key-event-handler';
-import createStore from './redux/store/createStore';
-import Handler from './screens/Handler';
 import withTheme from 'shared/src/styles/withTheme.js';
 import GlobalStyle from 'shared/src/styles/GlobalStyle';
+import createStore from './redux/store/createStore';
+import Handler from './screens/Handler';
 
 const store = createStore();
 export const keysStore = createStore(keysReducer);
-
-
 
 export default function setupApp(App) {
   const ThemedApp = withTheme(App);
@@ -22,10 +20,10 @@ export default function setupApp(App) {
           <LocaleContextProvider>
             <Provider store={keysStore}>
               <Handler keysStore={keysStore} />
-              <React.Fragment>
-							<ThemedApp />
-							<GlobalStyle />
-						</React.Fragment>
+              <>
+                <ThemedApp />
+                <GlobalStyle />
+              </>
             </Provider>
           </LocaleContextProvider>
         </PersistGate>
