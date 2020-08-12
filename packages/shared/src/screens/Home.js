@@ -72,9 +72,9 @@ const Home = () => {
                 <Text style={styles.highlight}>.web.tsx</Text> extension (also
                 supports
                 <Text style={styles.highlight}>.android</Text>
-,
+,{' '}
+                <Text style={styles.highlight}>.ios</Text>,
 {' '}
-                <Text style={styles.highlight}>.ios</Text>,{' '}
                 <Text style={styles.highlight}>.native</Text>, etc).
               </Text>
             </View>
