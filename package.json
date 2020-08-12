@@ -30,6 +30,7 @@
     "husky": "4.2.5",
     "jsdoc": "3.6.5",
     "jsdoc-plugin-typescript": "2.0.5",
+    "modal-enhanced-react-native-web": "^0.2.0",
     "prettier": "2.0.5",
     "styled-components": "^5.1.1",
     "typescript": "3.7.5"

@@ -24,13 +24,13 @@ import { MoviePlayerPropTypes, defaultProps } from './proptypes';
  * )
  */
 const MoviePlayer = (props) => {
-  const { width, height } = Dimensions.get('window');
+  const { height, width } = Dimensions.get('window');
   const { url } = props;
   return (
     <View>
       <Video
         source={{ uri: url }}
-        resizeMode="contain"
+        resizeMode="stretch"
         paused={false}
         repeat={true}
         style={{

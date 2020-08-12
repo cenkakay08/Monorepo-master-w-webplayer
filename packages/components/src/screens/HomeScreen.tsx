@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   fullScreenVideo: {
     position: 'absolute',
     left: 0,
-    bottom: 0,
+    top: 0,
     width: 1920,
     height: 1080,
   },
