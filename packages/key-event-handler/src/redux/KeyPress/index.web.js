@@ -20,7 +20,7 @@ import {
  *
  * @return {string} - Pressed key event object { type: '...', code: '...', key: '...', keyCode: '...', ... }
  */
-const useKeyPress = (store) => {
+export const useKeyPress = (store) => {
   const downHandler = (event) => {
     store.dispatch(setKeyEvent(event));
   };
@@ -49,5 +49,3 @@ const useKeyPress = (store) => {
     };
   }, []); // Empty array ensures that effect is only run on mount and unmount
 };
-
-export default useKeyPress;

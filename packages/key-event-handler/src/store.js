@@ -7,8 +7,6 @@
  * @import { NAME } from './constants';
  */
 import { NAME } from './constants';
-import { keysStore } from '../../shared/src/setup';
-import { AbstractKeyNames } from './abstractKeyNames';
 
 /**
  * Wrapper object to use store getters and setters easily.

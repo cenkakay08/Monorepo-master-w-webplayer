@@ -6,8 +6,8 @@
  */
 
 /**
- * @import PropTypes from 'prop-types';
  * @import { useEffect } from 'react';
+ * @import PropTypes from 'prop-types';
  *
  * @import { useKeyPress } from '../redux/KeyPress';
  * @import { AbstractKeyNames } from '../AbstractKeyNames';
@@ -15,7 +15,7 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import useKeyPress from '../redux/KeyPress';
+import { useKeyPress } from '../redux/KeyPress';
 import { AbstractKeyNames } from '../AbstractKeyNames';
 
 /**
@@ -45,6 +45,7 @@ const KeyBinder = (props) => {
   // Handle state changes
   const handleChange = () => {
     const abstractKeyName = props.store.getState().keys.pressedKeyAbstractName;
+
     if (
       abstractKeyName === '' ||
       abstractKeyName === undefined ||
@@ -575,4 +576,4 @@ KeyBinder.propTypes = {
 };
 
 /** Export component */
-export default KeyBinder;
+export { KeyBinder };

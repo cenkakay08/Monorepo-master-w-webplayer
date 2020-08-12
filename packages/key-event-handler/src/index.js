@@ -4,10 +4,10 @@
  */
 
 /**
- * @import KeyBinder from './components/KeyBinder';
+ * @import { KeyBinder } from './components/KeyBinder';
  * @import { keysReducer } from './redux/reducer';
  */
-import KeyBinder from './components/KeyBinder';
+import { KeyBinder } from './components/KeyBinder';
 import { keysReducer } from './redux/reducer';
 
 export { KeyBinder, keysReducer };

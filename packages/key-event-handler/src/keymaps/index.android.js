@@ -7,7 +7,7 @@
  * Keymap JSON object.
  * Key is abstract name of the pressed key, value is the string of the pressed key from device.
  */
-const KeyMap = {
+export const KeyMap = {
   LEFT: 'left',
   RIGHT: 'right',
   UP: 'up',
@@ -68,5 +68,3 @@ const KeyMap = {
   // SEARCH: '',
   // VIEW: ''
 };
-
-export default KeyMap;
