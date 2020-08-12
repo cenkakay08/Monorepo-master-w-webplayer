@@ -8,7 +8,10 @@
     "react-dom": "16.12.0",
     "react-native-web": "0.12.1",
     "react-scripts": "3.3.1",
-    "reduxstore": "0.0.1"
+    "reduxstore": "0.0.1",
+    "styled-components": "^4.1.2",
+    "styled-system": "^3.1.11",
+    "material-icons-react": "^1.0.4"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -30,7 +33,7 @@
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.3.2",
     "babel-plugin-react-native-web": "0.12.1",
-    "babel-plugin-module-resolver": "3.2.0",    
+    "babel-plugin-module-resolver": "3.2.0",
     "react-app-rewired": "2.1.5"
   }
 }

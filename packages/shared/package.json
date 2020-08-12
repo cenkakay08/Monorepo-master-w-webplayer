@@ -19,6 +19,9 @@
     "@react-navigation/native": "5.6.1",
     "@react-navigation/stack": "5.6.2",
     "react-router": "5.2.0",
-    "react-router-dom": "5.2.0"
+    "react-router-dom": "5.2.0",
+    "styled-components": "^4.1.2",
+    "styled-system": "^3.1.11",
+    "material-icons-react": "^1.0.4"
   }
 }
