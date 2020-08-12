@@ -1,135 +1,121 @@
-import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Text, { Heading3, Heading2 } from '../components/primitives/Text';
+import View from '../components/primitives/View';
+import Container from '../components/layout/Container';
+import Touchable from '../components/primitives/Touchable';
+import Button from '../components/common/Button';
+import Icon from '../components/common/Icon';
+import Paper from '../components/common/Paper';
+import Section from '../components/common/Section';
+import StatusBar from '../components/common/StatusBar';
+import ScrollView from '../components/common/ScrollView';
+import TextInput from '../components/common/Form/TextInput';
+import Image from '../components/primitives/Image';
+import { Actions } from '../../../reduxstore/src/redux/modules/app';
 import useTranslation from 'i18n';
-import { AppHeader } from '../components/commons/header/AppHeader';
 import { MoviePlayer } from '../components/player/MoviePlayer';
+import styled from 'styled-components/native';
 
-/**
- * App component as an entry point for all platforms
- * @component
- * @example
- * return (
- *   <>
- *     <StatusBar />
- *      <SafeAreaView>
- *        <ScrollView>
- *          <AppHeader />
- *          <View />
- *          <MoviePlayer />
- *        </ScrollView>
- *      </SafeAreaView>
- *   </>
- * )
- */
-const Home = () => {
-  const { getString } = useTranslation();
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <AppHeader />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
+const toggleThemeName = (theme) => (theme === 'light' ? 'dark' : 'light');
+
+const MyImage = styled.Image`
+width: 400px;
+height: 400px;
+`;
+class Home extends Component {
+  state = { value: '' };
+
+  componentDidUpdate() {
+    const { theme } = this.props;
+    StatusBar.setBarStyle(theme === 'light' ? 'dark-content' : 'light-content');
+  }
+
+  render() {
+    const { onPressProfile, theme, changeTheme } = this.props;
+
+    return (
+      <Container flex={1} justifyContent="flex-start">
+        <ScrollView contentContainerStyle={{ padding: 20 }}>
+          <Heading2 m={10}>Welcome to React Native / Web!</Heading2>
+
+          <Section>
+            <Heading3 m={10}>Theming</Heading3>
+
+            <Text>Current Theme: {theme}</Text>
+
+            <Button
+              text={`Use theme ${toggleThemeName(theme)}`}
+              onPress={() => changeTheme(toggleThemeName(theme))}
+            />
+          </Section>
+
+          <Section>
+            <Heading3 m={10}>Common Components</Heading3>
+            <MoviePlayer
+              width={800}
+              height={500}
+              url="https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
+            />
+
+            <View flexDirection="row" justifyContent="flex-start">
+              <Touchable flex={1}>
+                <Paper variant="red" flex={1}>
+                  <Icon name="dashboard" color="white" />
+                  <Text variant="white">Dashboard</Text>
+                </Paper>
+              </Touchable>
+
+              <View flex={1}>
+                <Paper
+                  flexDirection="row"
+                  justifyContent="center"
+                  variant="green">
+                  <Icon name="bookmark" color="white" />
+                  <Text variant="white">Bookmarks</Text>
+                </Paper>
+                <Paper
+                  flexDirection="row"
+                  justifyContent="center"
+                  variant="orange">
+                  <Icon name="assessment" color="white" />
+                  <Text variant="white">Assessments</Text>
+
+                </Paper>
+                <Paper>
+                <MyImage
+                    source={{ uri: 'https://reactjs.org/logo-og.png' }}
+                    />
+                </Paper>
+              </View>
             </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>{getString('welcome')}</Text>
-              <Text style={styles.sectionDescription}>
-                Edit
-{' '}
-                <Text style={styles.highlight}>
-                  packages/components/App.tsx
-                </Text>
-{' '}
-                to change to change this screen and then come back to see your
-                edits (in the phone or the browser).
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>
-                Web support via react-native-web
-              </Text>
-              <Text style={styles.sectionDescription}>
-                Run{' '}
-                <Text style={styles.highlight}>yarn workspace web start</Text>{' '}
-                to open this app in the browser.
-              </Text>
-              <Text style={styles.sectionDescription}>
-                It will share the same code from mobile, unless you create
-                platform-specific files using the{' '}
-                <Text style={styles.highlight}>.web.tsx</Text> extension (also
-                supports
-                <Text style={styles.highlight}>.android</Text>
-,{' '}
-                <Text style={styles.highlight}>.ios</Text>,
-{' '}
-                <Text style={styles.highlight}>.native</Text>, etc).
-              </Text>
-            </View>
-          </View>
-          <MoviePlayer
-            width={800}
-            height={500}
-            url="https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"
-          />
+          </Section>
+
+          <Section>
+            <Heading3 m={10}>Screens</Heading3>
+            <Button text="Profile" onPress={onPressProfile} />
+          </Section>
+
+          <Section>
+            <Heading3 m={10}>Text Input</Heading3>
+            <TextInput
+              value={this.state.value}
+              onChange={(value) => this.setState({ value })}
+              placeholder="Type something..."
+            />
+          </Section>
         </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+      </Container>
+    );
+  }
+}
 
-/**
- * stylesheet definitions for App
- */
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: 'white',
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: 'white',
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: 'black',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: 'gray',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: 'gray',
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+const mapStateToProps = (state) => ({
+  theme: state.app.theme,
 });
 
-export default Home;
+const mapDispatchToProps = {
+  changeTheme: Actions.changeTheme,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

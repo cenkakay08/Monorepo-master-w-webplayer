@@ -5,11 +5,16 @@ import { LocaleContextProvider } from 'i18n/LocaleContext';
 import { keysReducer } from 'key-event-handler';
 import createStore from './redux/store/createStore';
 import Handler from './screens/Handler';
+import withTheme from 'shared/src/styles/withTheme.js';
+import GlobalStyle from 'shared/src/styles/GlobalStyle';
 
 const store = createStore();
 export const keysStore = createStore(keysReducer);
 
+
+
 export default function setupApp(App) {
+  const ThemedApp = withTheme(App);
   const Root = () => {
     return (
       <Provider store={store}>
@@ -17,7 +22,10 @@ export default function setupApp(App) {
           <LocaleContextProvider>
             <Provider store={keysStore}>
               <Handler keysStore={keysStore} />
-              <App />
+              <React.Fragment>
+							<ThemedApp />
+							<GlobalStyle />
+						</React.Fragment>
             </Provider>
           </LocaleContextProvider>
         </PersistGate>

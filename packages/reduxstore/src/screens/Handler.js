@@ -20,7 +20,7 @@ const Handler = ({ network, theme, keysStore }) => {
 };
 
 const mapStateToProps = (state) => ({
-  // theme: state.app.theme,
+  //  theme: state.app.theme,
   network: state.network,
 });
 
