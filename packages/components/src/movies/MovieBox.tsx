@@ -15,43 +15,19 @@ import {
 import axios from 'axios';
 import styled from 'styled-components';
 import { PopupMovieDetails } from './PopupMovieDetails';
+import {API_URL} from './config.js';
+import { GetAndSearchMovies } from './GetAndSearchMovies';
 
 const { height, width } = Dimensions.get('window');
 
 const MovieBox = () => {
-  const apiurl = 'http://www.omdbapi.com/?apikey=64824688';
-  const [state, setState] = useState({
-    searchText: 'Batman',
-    results: [] as any,
-    selected: {} as any,
-  });
-  const search = () => {
-    axios(apiurl + '&s=' + state.searchText).then(({ data }) => {
-      const results = data.Search;
-
-      setState((prevState) => {
-        return { ...prevState, results: results };
-      });
-    });
-  };
-  const openPopup = (id) => {
-    axios(apiurl + '&i=' + id).then(({ data }) => {
-      const result = data;
-
-      console.log(result);
-
-      setState((prevState) => {
-        return { ...prevState, selected: result };
-      });
-    });
-  };
+  const [{state,setState},search,openPopup]= GetAndSearchMovies();
   return (
     <View>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.movieBox}
-        //pagingEnabled={true}
       >
         <View>
           <Button title="Show the Movies" onPress={search}></Button>
@@ -72,10 +48,7 @@ const MovieBox = () => {
             <View style={styles.result}>
               <Image
                 source={{ uri: result.Poster }}
-                style={{
-                  width: Platform.OS === 'android' ? 100 : 300,
-                  height: Platform.OS === 'android' ? 120 : 340,
-                }}
+                style={styles.image}
                 resizeMode="stretch"
               />
             </View>
@@ -86,23 +59,7 @@ const MovieBox = () => {
     </View>
   );
 };
-/* <Modal animationType="fade"
-           transparent={false}
-           presentationStyle="overFullScreen"
-           visible={(typeof state.selected.Title != "undefined")}>
-      <View >
-        <Text >{state.selected.Title}</Text>
-        <Text style={{marginBottom:20}}>Rating: {state.selected.imdbRating}</Text>
-        <Text>{state.selected.Plot}</Text>
-      </View>
-      <TouchableHighlight
-         onPress={()=> setState(prevState =>{
-           return {...prevState, selected:{}}
-         })}
-      >
-        <Text >Close</Text>
-      </TouchableHighlight>
-    </Modal> */
+
 const styles = StyleSheet.create({
   Box: {
     position: 'absolute',
@@ -136,6 +93,10 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 150,
     backgroundColor: '#756868',
+  },
+  image:{
+    width: Platform.OS === 'android' ? 100 : 300,
+    height: Platform.OS === 'android' ? 120 : 340,
   },
 });
 

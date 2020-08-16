@@ -2,11 +2,6 @@ import React, { useCallback } from 'react';
 import {
   View,
   StyleSheet,
-  Dimensions,
-  Image,
-  TextInput,
-  ScrollView,
-  Button,
   TouchableHighlight,
   Text,
 } from 'react-native';
@@ -24,10 +19,10 @@ const PopupMovieDetails = ({ state, setState }) => {
       backdropOpacity={0.5}>
       <View style={styles.popup}>
         <Text style={styles.poptitle}>{state.selected.Title}</Text>
-        <Text style={{ marginBottom: 20, color: 'white' }}>
+        <Text style={styles.rating}>
           Rating: {state.selected.imdbRating}
         </Text>
-        <Text style={{ color: 'white' }}>{state.selected.Plot}</Text>
+        <Text style={styles.plot}>{state.selected.Plot}</Text>
       </View>
       <TouchableHighlight
         onPress={() =>
@@ -60,6 +55,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#2484C4',
     color: 'white',
     top: 0,
+  },
+  plot:{
+    color: 'white' ,
+  },
+  rating:{
+    marginBottom: 20, 
+    color: 'white', 
   },
 });
 

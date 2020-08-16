@@ -11,16 +11,22 @@ import {
 import { MoviePlayer } from '../player/MoviePlayer';
 import { MovieBox } from '../movies/MovieBox';
 import styled from 'styled-components';
+import { 
+  API_URL, 
+  MOVIE_PLAYER_HEIGHT,
+  MOVIE_PLAYER_WIDTH,
+  MOVIE_PLAYER_URL,
+} from '../movies/config.js'
 
 export function HomeScreen() {
   return (
     <View style={styles.fullScreenVideo}>
       <View>
         <MoviePlayer
-          width={1920}
-          height={1080}
+          width={MOVIE_PLAYER_WIDTH}
+          height={MOVIE_PLAYER_HEIGHT}
           url={
-            'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
+            MOVIE_PLAYER_URL
           }
         />
       </View>
