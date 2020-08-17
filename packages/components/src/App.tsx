@@ -10,6 +10,7 @@ import {
 
 import { AppHeader } from './commons/header/AppHeader';
 import { MoviePlayer } from './player/MoviePlayer';
+import { HomeScreen } from './screens/HomeScreen';
 
 /**
  * App component as an entry point for all platforms
@@ -31,8 +32,18 @@ import { MoviePlayer } from './player/MoviePlayer';
 export function App() {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar hidden />
       <SafeAreaView>
+        <View>
+          <HomeScreen />
+        </View>
+      </SafeAreaView>
+    </>
+  );
+}
+/* <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <HomeScreen/>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
@@ -75,17 +86,13 @@ export function App() {
               </Text>
             </View>
           </View>
-          <MoviePlayer
+        </ScrollView>
+      </SafeAreaView> */
+/* <MoviePlayer
             width={800}
             height={500}
             url={'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'}
-          />
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-}
-
+          /> */
 /**
  * stylesheet definitions for App
  */
@@ -96,6 +103,9 @@ const styles = StyleSheet.create({
   engine: {
     position: 'absolute',
     right: 0,
+  },
+  fullScreen: {
+    flex: 1,
   },
   body: {
     backgroundColor: 'white',
