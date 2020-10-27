@@ -5,7 +5,7 @@
 
 _Requirements: [React Native](https://facebook.github.io/react-native/docs/getting-started.html#native) (last tested on react-native@0.61)_
 
-  - `$ git clone git@github.com:brunolemos/react-native-web-monorepo.git`
+  - `$ git clone
   - `$ cd react-native-web-monorepo`
   - `$ yarn`
   - `$ cd packages/mobile/ios`
